@@ -1,6 +1,10 @@
 ## MATLAB auto buckup file:
 *.asv
 
+## conceal LaTeX important file:
+cumcmart.cls
+declaration.tex
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
