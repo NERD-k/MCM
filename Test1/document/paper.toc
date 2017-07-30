@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {一}问题重述}{3}
+\contentsline {section}{\numberline {二}建模分析}{3}
+\contentsline {subsection}{\numberline {2.1}模型假设}{3}
+\contentsline {subsection}{\numberline {2.2}记号说明}{3}
+\contentsline {subsection}{\numberline {2.3}建立模型}{3}
+\contentsline {subsection}{\numberline {2.4}模型求解和分析}{3}
+\contentsline {subsection}{\numberline {2.5}模型评价}{3}
+\contentsline {subsubsection}{\numberline {2.5.1}模型优点}{3}
+\contentsline {subsubsection}{\numberline {2.5.2}模型缺点}{3}

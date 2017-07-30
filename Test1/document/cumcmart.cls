@@ -36,7 +36,7 @@
 \newtoks\advisor
 \newtoks\theday
 
-\renewcommand\contentsname{\centering \ziju{2}目录}
+%\renewcommand\contentsname{\centering \ziju{2}目录}
 
 %------------------------ Page layout ----------------------------------
 
