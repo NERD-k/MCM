@@ -12,8 +12,7 @@ for i = 2:2:36
 end
 
 % 每站上车人数与下车人数之差
-A = up - down
-;
+A = up - down;
 % 累积求和
 B = cumsum(A');
 B = B';
@@ -24,8 +23,23 @@ temp = cat(1,zeros(1,14),A);
 temp(15,:) = [];
 C = A - temp;
 
-% 每个时间段的总净人数
+% 每个时间段的总净增加人数
 D = B(:,14);
+
+% 每个时间段的人数
+E = cumsum(D);
+
+% 插值
+E = cat(1,0,E);
+time = linspace(1,19,19)';
+x = 1:0.1:19;
+y = interp1(time,E,x,'cubic');
+
+figure
+plot(x,y,'-');
+title('各个时间段在车上的总人数');
+xlabel('时刻');
+ylabel('总人数');
 
 % 文件写入
 % 如要修改，将deal1.xlsx文件路径填入，或者放在此m文件相同目录下，使用xlswrite('deal1.xlsx')
