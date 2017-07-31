@@ -5,7 +5,7 @@ clc,clear all
 initdata();
 [E,s] = predata();
 
-T = s / 20;
+T = 60;
 
 a = E';
 for i = 1:18
@@ -17,10 +17,10 @@ n = cat(2,nmin',nmax');
 
 for i =1:18
     tmin(i) = T / nmax(i);
-    tmax(i) = min(T / nmin(i),10);
+    tmax(i) = T / nmin(i);
 end
 
 t = cat(2,tmin',tmax');
-delete('D:\Mcm\Test1\chengP1.xlsx')
+% delete('D:\Mcm\Test1\chengP1.xlsx')
 xlswrite('D:\Mcm\Test1\chengP1.xlsx', n, 'n的上下限')
 xlswrite('D:\Mcm\Test1\chengP1.xlsx', t, 't的上下限')
