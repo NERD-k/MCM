@@ -1,0 +1,14 @@
+ ☐  求矩阵长度@created(08-04-17 21:58)
+     [row,col]=size(matrix);
+ ☐ 去除NaN @created(08-04-17 22:26)
+     将NaN转化为数字或去掉
+     在做统计时，常需要将NaN转化为可计算的数字或去掉,以下是几种方法:
+     注:判断一个值是否为NaN,只能用 isnan(),而不可用 x==NaN; 
+     i = find( ~ isnan(x));
+     x = x(i)                             先找出值不是NaN的项的下标,将这些元素保留
+     x = x(find( ~ isnan(x)))     同上,去掉NaN
+     x = x( ~ isnan(x));           更快的做法
+     x(isnan(x)) = [];               消掉NaN
+     X(any(isnan(X)’),:) = [];   把含有NaN的行都去掉
+
+
