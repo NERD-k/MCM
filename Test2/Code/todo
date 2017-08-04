@@ -28,3 +28,6 @@ red1 = red1( ~ isnan(red1));
 
 red1(all(red1==0,2),:) = [];
 i = find(isnan(red1))
+
+Var2(find(Var2 == 0)) = []
+
