@@ -1,0 +1,30 @@
+clc,clear
+
+load('red1.mat','red1');
+load('red2.mat','red2');
+load('write1.mat','write1');
+load('write2.mat','write2');
+
+
+
+red1(any(isnan(red1)'),:) = [];
+red2(any(isnan(red2)'),:) = [];
+write1(any(isnan(write1)'),:) = [];
+write2(any(isnan(write2)'),:) = [];
+size(red1)
+size(red2)
+size(write1)
+size(write2)
+
+
+red1(all(isnan(red1)'),:) = [];
+red2(all(isnan(red2)'),:) = [];
+write1(all(isnan(write1)'),:) = [];
+write2(all(isnan(write2)'),:) = [];
+
+red1(isnan(red1)) = [];
+x = x(find( ~ isnan(x)))
+red1 = red1( ~ isnan(red1));
+
+red1(all(red1==0,2),:) = [];
+i = find(isnan(red1))
