@@ -3,3 +3,17 @@
      ☐ 车辆满载率，日常使用的方法是用线路最大断面的客流量与同一断面运输能力的比较，即车厢内实际乘客人数与车型定员人数之比，是衡量车辆利用程度的指标。
      
  ☐ sumsum((A)) = 0 @created(07-31-17 02:33)
+ ☐ MATLAB @created(08-01-17 11:07)
+     matlab如何在绘柱状图的时候添加横线 
+
+     threshold = 2.5e3;
+     xrange = get(gca,'xlim');
+     hold on;
+     plot(xrange,[threshold threshold],'r-');
+ ☐ Matlab在直方图中显示每个数据条所代表的数值 @created(08-02-17 02:07)
+     x = rand(100,1);
+    [n,y] = hist(x);
+    bar(y,n);
+    for i = 1:length(y)
+    text(y(i),n(i)+0.5,num2str(n(i)));
+    end

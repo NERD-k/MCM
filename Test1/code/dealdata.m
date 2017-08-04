@@ -26,6 +26,7 @@ temp = A;
 temp = cat(1,zeros(1,14),A);
 temp(15,:) = [];
 C = A - temp;
+F = cumsum(A);
 
 % 每个时间段的总净增加人数
 D = B(:,14);
@@ -37,11 +38,11 @@ E = cumsum(D);
 F = cumsum(A);
 
 % 文件写入
-% 如要修改，将deal1.xlsx文件路径填入，或者放在此m文件相同目录下，使用xlswrite('deal1.xlsx')
-delete('D:\Mcm\Test1\deal1.xlsx')  % 覆盖写入
-xlswrite('D:\Mcm\Test1\deal1.xlsx', A, 'A')
-xlswrite('D:\Mcm\Test1\deal1.xlsx', B', 'B')
-xlswrite('D:\Mcm\Test1\deal1.xlsx', C, 'C')
-xlswrite('D:\Mcm\Test1\deal1.xlsx', D, 'D')
-xlswrite('D:\Mcm\Test1\deal1.xlsx', E, 'E')
-xlswrite('D:\Mcm\Test1\deal1.xlsx', F, 'F')
+% 如要修改，将data_deal.xlsx文件路径填入，或者放在此m文件相同目录下，使用xlswrite('data_deal.xlsx')
+delete('D:\Mcm\Test1\data_deal.xlsx')  % 覆盖写入
+xlswrite('D:\Mcm\Test1\data_deal.xlsx', A, 'A')
+xlswrite('D:\Mcm\Test1\data_deal.xlsx', B, 'B')
+xlswrite('D:\Mcm\Test1\data_deal.xlsx', C, 'C')
+xlswrite('D:\Mcm\Test1\data_deal.xlsx', D, 'D')
+xlswrite('D:\Mcm\Test1\data_deal.xlsx', E, 'E')
+xlswrite('D:\Mcm\Test1\data_deal.xlsx', F, 'F')

@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.7.29)  31 JUL 2017 13:46
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.7.29)  4 AUG 2017 14:25
 entering extended mode
-**./paper.tex
-(paper.tex
+**D:/Mcm/Test1/document/paper.tex
+(D:/Mcm/Test1/document/paper.tex
 LaTeX2e <2017-04-15>
 Babel <3.12> and hyphenation patterns for 75 language(s) loaded.
 (cumcmart.cls
@@ -1547,7 +1547,74 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\g__fontspec_family_SimHei_int=\count287
+(declaration.tex
+Overfull \hbox (7.20131pt too wide) in paragraph at lines 21--23
+[][][] 
+ []
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Overfull \hbox (4.96011pt too wide) in paragraph at lines 32--37
+[][] 
+ []
+
+\g__fontspec_family_KaiTi_int=\count287
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "KaiTi/BI" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "KaiTi/B" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "KaiTi/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'KaiTi(0)' created for font 'KaiTi' with options [Script={CJK}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->"KaiTi/OT:script=hani;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+.................................................
+[1
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
+[]\TU/SimSun(0)/m/n/12.045 评
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
+\TU/SimSun(0)/m/n/12.045 阅
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--77
+[]\TU/SimSun(0)/m/n/12.045 评
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+[]\TU/SimSun(0)/m/n/12.045 备
+ []
+
+) [2]
+\g__fontspec_family_SimHei_int=\count288
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1600,25 +1667,82 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 . - 'normal' (m/n) with NFSS spec.: <->"SimSun/OT:script=hani;language=DFLT;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-[1
+Missing character: There is no ： in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ： in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ： in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ： in font [lmroman12-regular]:mapping=tex-text;!
+ [1]
 
-]
-LaTeX Font Info:    Try loading font information for U+msa on input line 60.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 60.
+LaTeX Font Warning: Font shape `TU/SimSun(0)/bx/it' undefined
+(Font)              using `TU/SimSun(0)/bx/n' instead on input line 74.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2] (paper.aux) ) 
+Missing character: There is no ， in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ， in font [lmroman12-regular]:mapping=tex-text;!
+! Missing delimiter (. inserted).
+<to be read again> 
+                   $
+l.110     \end{array}
+                     
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
+
+[2] [3]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 162.
+
+[4]
+\g__fontspec_family_FangSong_int=\count289
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "FangSong/BI" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "FangSong/B" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "FangSong/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'FangSong(0)' created for font 'FangSong' with options
+. [Script={CJK}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->"FangSong/OT:script=hani;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+.................................................
+
+Overfull \hbox (78.22862pt too wide) in paragraph at lines 275--275
+[]\TU/lmtt/m/n/12.045 %  \TU/FangSong(0)/m/n/12.045 如 要 修 改 ， 将 \TU/lmtt/m/n/12
+.045 ***.xlsx \TU/FangSong(0)/m/n/12.045 文 件 路 径 填 入 ， 或 者 放 在 此 \TU/lmtt/m/n/1
+2.045 m \TU/FangSong(0)/m/n/12.045 文 件 相 同 目 录 下 ， 使 用 \TU/lmtt/m/n/12.045 xlsr
+ead('***.xlsx')[] 
+ []
+
+[5] [6] [7] (paper.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
 Here is how much of TeX's memory you used:
- 23207 strings out of 427827
- 462182 string characters out of 3152365
- 517463 words of memory out of 3000000
- 26985 multiletter control sequences out of 15000+200000
- 533393 words of font info for 57 fonts, out of 3000000 for 9000
+ 23585 strings out of 427827
+ 481253 string characters out of 3152365
+ 524386 words of memory out of 3000000
+ 27312 multiletter control sequences out of 15000+200000
+ 538230 words of font info for 99 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
- 63i,11n,70p,10458b,358s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,15n,70p,10478b,929s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on paper.pdf (2 pages).
+Output written on paper.pdf (9 pages).
