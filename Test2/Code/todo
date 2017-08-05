@@ -31,3 +31,6 @@ i = find(isnan(red1))
 
 Var2(find(Var2 == 0)) = []
 
+red1use = datapre2(red1);
+
+red1ord = datapre3(red1use);
