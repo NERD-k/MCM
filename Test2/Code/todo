@@ -34,3 +34,18 @@ Var2(find(Var2 == 0)) = []
 red1use = datapre2(red1);
 
 red1ord = datapre3(red1use);
+
+
+xlswrite('╨Лфоля╬ф.xlsx',red1sum','red1sum')
+xlswrite('╨Лфоля╬ф.xlsx',red1aver','red1aver')
+xlswrite('╨Лфоля╬ф.xlsx',red1var','red1var')
+xlswrite('╨Лфоля╬ф.xlsx',red2sum','red2sum')
+xlswrite('╨Лфоля╬ф.xlsx',red2aver','red2aver')
+xlswrite('╨Лфоля╬ф.xlsx',red2var','red2var')
+xlswrite('╟вфоля╬ф.xlsx',write1sum','write1sum')
+xlswrite('╟вфоля╬ф.xlsx',write1aver','write1aver')
+xlswrite('╟вфоля╬ф.xlsx',write1var','write1var')
+xlswrite('╟вфоля╬ф.xlsx',write2sum','write2sum')
+xlswrite('╟вфоля╬ф.xlsx',write2aver','write2aver')
+xlswrite('╟вфоля╬ф.xlsx',write2var','write2var')
+
