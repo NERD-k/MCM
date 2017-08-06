@@ -49,3 +49,5 @@ xlswrite('°×ÆÏÌÑ¾Æ.xlsx',write2sum','write2sum')
 xlswrite('°×ÆÏÌÑ¾Æ.xlsx',write2aver','write2aver')
 xlswrite('°×ÆÏÌÑ¾Æ.xlsx',write2var','write2var')
 
+ [h,p,ci] = ttest(write1aver,write2aver,0.05)  % t¼ìÑé
+[p,h]= signrank(red1aver,red2aver) % ÖÈ¼ìÑé
