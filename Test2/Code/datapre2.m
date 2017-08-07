@@ -1,5 +1,5 @@
 function data = datapre2(olddata)
-for i = 0:length(olddata) / 10 - 1
-    data(:,:,i+1) = olddata(10*i+1:10*i+10,:);
-end
+    for i = i:length(olddata) / 10
+        data(:,:,i) = olddata(10*i-9:10*i,:);
+    end
 end

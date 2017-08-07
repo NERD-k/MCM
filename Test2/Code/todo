@@ -51,3 +51,11 @@ xlswrite('°×ÆÏÌÑ¾Æ.xlsx',write2var','write2var')
 
  [h,p,ci] = ttest(write1aver,write2aver,0.05)  % t¼ìÑé
 [p,h]= signrank(red1aver,red2aver) % ÖÈ¼ìÑé
+
+
+xlswrite('hao.xlsx',redjiuhao,'redjiu')
+xlswrite('hao.xlsx',redpuhao,'redpu')
+xlswrite('hao.xlsx',writejiuhao,'writejiu')
+xlswrite('hao.xlsx',writepuhao,'writepu')
+
+
