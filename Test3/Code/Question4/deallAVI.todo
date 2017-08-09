@@ -1,0 +1,112 @@
+i = 0;
+for k = 1 : obj.FrameRate*60 : numFrames           % 读取数据
+    i = i + 1;
+    frame = read(obj,k);
+    imshow(frame);                                 %显示帧
+    imwrite(frame,strcat('JPG\',int2str(i),'.png'),'png');    % 保存帧
+end
+for k = 1 : numFrames% 读取数据
+     frame = read(obj,k);
+     imshow(frame);%显示帧
+     imwrite(frame,strcat(num2str(k),'.jpg'),'jpg');% 保存帧
+ end
+Name - 视频文件名
+Path - 视频文件路径
+Duration - 视频的总时长（秒）
+FrameRate - 视频帧速（帧/秒）
+NumberOfFrames - 视频的总帧数
+Height - 视频帧的高度
+Width - 视频帧的宽度
+BitsPerPixel - 视频帧每个像素的数据长度（比特）
+VideoFormat - 视频的类型, 如 'RGB24'.
+Tag - 视频对象的标识符，默认为空字符串''
+Type - 视频对象的类名，默认为'VideoReader'.
+
+ imwrite(J,strcat('F:\shiyan\work\',int2str(i),'.bmp'),'bmp');
+
+1. 可以用mmreader和 read这两个函数读取视频帧
+readerobj = mmreader('xylophone.mpg');
+vidFrames = read(readerobj);
+具体参数含义帮助文档里面有。示例：
+fileName = 'ntia_wfall-qcif_original.avi'; % .avi必须是无损压缩的. 
+obj = mmreader(fileName);
+vidFrames = read(obj);% 读取所有的帧数据
+numFrames = obj.numberOfFrames;% 帧的总数 
+for k = 1 : numFrames% 读取数据
+     mov(k).cdata = vidFrames(:,:,:,k);% mov(k)是一个结构体，mov(k).cdata实际上就是一个有RGB的帧
+     mov(k).colormap = [];
+end
+movie(mov);% 在matlab中播放视频
+
+2. 从AVI视频中提取每一帧，使用 aviinfo，aviread
+str='D:\Program Files\MATLAB71\work\1.avi';
+info=aviinfo(str);
+fum=info.NumFrames;
+for i=1:fum
+    mov=aviread(str,i);
+    I=mov.cdata;
+    J=rgb2gray(I);
+    imwrite(J,strcat('F:\shiyan\work\',int2str(i),'.bmp'),'bmp');
+end
+
+3. Matlab下读取视频文件并进行基于邻帧差法的视频目标运动检测（原文）
+videoObj = mmreader('highwayII_raw.avi');%读视频文件
+nframes = get(videoObj, 'NumberOfFrames');%获取视频文件帧个数
+for k = 1 : nframes
+    currentFrame = read(videoObj, k);%读取第i帧
+    subplot(1,2,1),imshow(currentFrame);
+   
+    grayFrame = rgb2gray(currentFrame);%灰度化
+    if(k==1)
+        grayFrame_1 = grayFrame;
+    end
+    difgrayFrame= grayFrame - grayFrame_1;%邻帧差
+    grayFrame_1 = grayFrame;
+   
+    subplot(1,2,2),imshow(difgrayFrame);
+end
+
+MyYuanLaiPic = imread('e:/image/matlab/darkMouse.jpg');%读取RGB格式的图像  
+MyFirstGrayPic = rgb2gray(MyYuanLaiPic);%用已有的函数进行RGB到灰度图像的转换  
+  
+[rows , cols , colors] = size(MyYuanLaiPic);%得到原来图像的矩阵的参数  
+MidGrayPic = zeros(rows , cols);%用得到的参数创建一个全零的矩阵，这个矩阵用来存储用下面的方法产生的灰度图像  
+MidGrayPic = uint8(MidGrayPic);%将创建的全零矩阵转化为uint8格式，因为用上面的语句创建之后图像是double型的  
+  
+for i = 1:rows  
+    for j = 1:cols  
+        sum = 0;  
+        for k = 1:colors  
+            sum = sum + MyYuanLaiPic(i , j , k) / 3;%进行转化的关键公式，sum每次都因为后面的数字而不能超过255  
+        end  
+        MidGrayPic(i , j) = sum;  
+    end  
+end  
+imwrite(MidGrayPic , 'E:/image/matlab/DarkMouseGray.png' , 'png');  
+  
+%显示原来的RGB图像  
+figure(1);  
+imshow(MyYuanLaiPic);  
+  
+%显示经过系统函数运算过的灰度图像  
+figure(2);  
+imshow(MyFirstGrayPic);  
+  
+%显示转化之后的灰度图像  
+figure(3);  
+imshow(MidGrayPic); 
+
+
+% nFrame = rgb2gray('\JPG\1.jpg');
+% 1jpg = imread('D:\MCM\Test3\Code\Question4\JPG\1.jpg');
+% imshow(1jpg)
+% newmap = rgb2gray(1jpg);
+% imshow(newmap)
+
+clc,clear
+
+a1jpg = imread('D:\MCM\Test3\Code\Question4\JPG\1.jpg'); %读取RGB格式的图像  
+n1jpg = rgb2gray(a1jpg);                        %用已有的函数进行RGB到灰度图像的转换  
+imwrite(n1jpg,'D:\MCM\Test3\Code\Question4\nJPG\n1.jpg');
+
+

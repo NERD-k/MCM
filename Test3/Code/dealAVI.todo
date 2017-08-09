@@ -1,0 +1,60 @@
+ for k = 1 : numFrames% 读取数据
+     frame = read(obj,k);
+     imshow(frame);%显示帧
+     imwrite(frame,strcat(num2str(k),'.jpg'),'jpg');% 保存帧
+ end
+Name - 视频文件名
+Path - 视频文件路径
+Duration - 视频的总时长（秒）
+FrameRate - 视频帧速（帧/秒）
+NumberOfFrames - 视频的总帧数
+Height - 视频帧的高度
+Width - 视频帧的宽度
+BitsPerPixel - 视频帧每个像素的数据长度（比特）
+VideoFormat - 视频的类型, 如 'RGB24'.
+Tag - 视频对象的标识符，默认为空字符串''
+Type - 视频对象的类名，默认为'VideoReader'.
+
+ imwrite(J,strcat('F:\shiyan\work\',int2str(i),'.bmp'),'bmp');
+
+1. 可以用mmreader和 read这两个函数读取视频帧
+readerobj = mmreader('xylophone.mpg');
+vidFrames = read(readerobj);
+具体参数含义帮助文档里面有。示例：
+fileName = 'ntia_wfall-qcif_original.avi'; % .avi必须是无损压缩的. 
+obj = mmreader(fileName);
+vidFrames = read(obj);% 读取所有的帧数据
+numFrames = obj.numberOfFrames;% 帧的总数 
+for k = 1 : numFrames% 读取数据
+     mov(k).cdata = vidFrames(:,:,:,k);% mov(k)是一个结构体，mov(k).cdata实际上就是一个有RGB的帧
+     mov(k).colormap = [];
+end
+movie(mov);% 在matlab中播放视频
+
+2. 从AVI视频中提取每一帧，使用 aviinfo，aviread
+str='D:\Program Files\MATLAB71\work\1.avi';
+info=aviinfo(str);
+fum=info.NumFrames;
+for i=1:fum
+    mov=aviread(str,i);
+    I=mov.cdata;
+    J=rgb2gray(I);
+    imwrite(J,strcat('F:\shiyan\work\',int2str(i),'.bmp'),'bmp');
+end
+
+3. Matlab下读取视频文件并进行基于邻帧差法的视频目标运动检测（原文）
+videoObj = mmreader('highwayII_raw.avi');%读视频文件
+nframes = get(videoObj, 'NumberOfFrames');%获取视频文件帧个数
+for k = 1 : nframes
+    currentFrame = read(videoObj, k);%读取第i帧
+    subplot(1,2,1),imshow(currentFrame);
+   
+    grayFrame = rgb2gray(currentFrame);%灰度化
+    if(k==1)
+        grayFrame_1 = grayFrame;
+    end
+    difgrayFrame= grayFrame - grayFrame_1;%邻帧差
+    grayFrame_1 = grayFrame;
+   
+    subplot(1,2,2),imshow(difgrayFrame);
+end
