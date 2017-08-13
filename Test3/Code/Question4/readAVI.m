@@ -10,5 +10,5 @@ i = 0;
 for k = 1 : 1500 : numFrames            % 读取数据
     i = i + 1;
     Frame = read(obj, k);        %读取第i帧
-    imwrite(Frame,strcat('JPG\',int2str(i),'.jpg'),'jpg');    % 保存帧
+    imwrite(Frame,strcat('PIC\',int2str(i),'.png'),'png');    % 保存帧
 end

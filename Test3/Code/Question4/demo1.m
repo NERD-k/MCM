@@ -1,7 +1,12 @@
-clc,clear
-syms phi delta h t
+%% Çó¸Ë¶¥×îÁÁÏñËØµã
+for i =1:41
+    temp(i) = max(max(frame(200:220,880:910,:,i)));
+end
 
-delta=7.5806*pi/180;
-sin(h) = sin(phi)*sin(delta) + cos(phi)*cos(delta)*cos(t);
-f = (sin(phi)^2 + sin(delta) + sin(phi)*cos(phi)*cos(delta) - sin(delta)) ./ sqrt(1-sin(h)^2)*cos(phi)-1;
-ANS = solve(f,phi)
+for i =1:41
+    Temp(i) = find(max(max(frame(200:220,880:910,:,i))));
+end
+
+
+bw=im2bw(T,0.8);
+imshow(bw)
