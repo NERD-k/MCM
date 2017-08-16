@@ -3,8 +3,8 @@ clc,clear
 %% 已知参数
 g = 9.8;
 rho = 1025;                     % 海水密度
-l = (1 - 2 / 5) * 0.105;        % 链节的有效长度
-N = 22.05 / ((1 - 2/5) * 0.105);% 链节最大数量
+l = (1 - 2 / 5) * 0.105;        % 链环的有效长度
+N = 22.05 / ((1 - 2/5) * 0.105);% 链环最大数量
 m1 = 1000;                      % 浮标的质量
 m2 = 10;                        % 每节钢管的质量
 m3 = 100;                       % 钢桶的质量
@@ -15,14 +15,14 @@ R_fubiao = 2 / 2;               % 浮标的半径
 R_tieguan = 0.05 / 2;           % 钢管的半径
 R_tietong = 0.3 / 2;            % 钢桶的半径
 
-F_tieguan = rho * pi * R_tieguan^2 * 1;      % 钢管的浮力
-F_tietong = rho * pi * R_tietong^2 * 1;      % 钢桶的浮力
+F_tieguan = rho * pi * R_tieguan^2 * 1;       % 钢管的浮力
+F_tietong = rho * pi * R_tietong^2 * 1;       % 钢桶的浮力
 
 %% 待定参数
 v = 36;
-h = 0.7513916;      % 初始吃水深度
+h = 0.77009;                                % 初始吃水深度
 %% 受力分析
-F_feng = 0.625 * R_fubiao * (2 - h) * v^2;    % 近海风荷载
+F_feng = 0.625 * 2 * R_fubiao * (2 - h) * v^2;    % 近海风荷载
 F_fubiao = rho * pi * R_fubiao^2 * h;         % 浮标的浮力
 % 上半部分受力分析
 a = zeros(6,1);
@@ -38,7 +38,7 @@ n = a(6,1) ./ (g * m5);
 if n >= N
     n = N;
 end
-M = cumsum(g * m5 * ones(floor(n),1));
+M = cumsum(g * m5 * ones(round(n),1));
 
 %% 合作用力倾斜角度（于竖直方向的夹角）
 alpha = atand(F_feng ./ a);
@@ -54,11 +54,11 @@ if T(end) >= g * m6
 end
 
 %% 判断海深
-H = h + sum(cosd(alpha(2:6,1))) + sum(l * cosd(theta))
+H = h + sum(cosd(alpha(1:5,1))) + sum(l * cosd(theta));
 
 %% 问题求解
 % 游动半径
-youdong = l * (N - n) + sum(sind(alpha(2:6,1))) + sum(l * sind(theta));
+youdong = l * (N - n) + sum(sind(alpha(1:5,1))) + sum(l * sind(theta));
 
 % 锚链形状
 % 横坐标
@@ -75,3 +75,6 @@ plot(x,y,'r-');
 hold on
 plot(x(2),y(2),'b*');    % 锚链恰好脱离海床的位置
 title('风速为36m/s时锚链的形状');
+xlabel('到锚点的距离');
+ylabel('到海床的高度');
+legend('锚链形状','锚环恰好离开海床位置','Location','northwest','horizontal')
